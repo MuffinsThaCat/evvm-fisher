@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  fisher-relayer:
+    build: .
+    container_name: fisher-relayer
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config.json:/data/config.json:ro
+      - fisher-data:/data
+    environment:
+      - RUST_LOG=info
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/fisher-relayer", "--health-check"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  fisher-data:
