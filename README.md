@@ -7,11 +7,17 @@
 [![Deployed](https://img.shields.io/badge/deployed-Sepolia-success)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
 
-## 🚀 LIVE ON SEPOLIA
+## 🚀 MULTI-CHAIN READY
 
-**Contract**: `0x8F111895ddAD9e672aD2BCcA111c46E1eADA5E90`  
-**Explorer**: [View on Etherscan](https://sepolia.etherscan.io/address/0x8F111895ddAD9e672aD2BCcA111c46E1eADA5E90)  
-**Relayer API**: `http://localhost:3001` ✅ Online  
+**Sepolia Testnet** (Live):
+- Contract: `0x8F111895ddAD9e672aD2BCcA111c46E1eADA5E90`  
+- Explorer: [View on Etherscan](https://sepolia.etherscan.io/address/0x8F111895ddAD9e672aD2BCcA111c46E1eADA5E90)
+
+**Supported Networks:**
+- ✅ **Supra** (Williams Executor) - 202x combined improvement
+- ✅ Arbitrum, Optimism, Base, Polygon
+- ✅ Any EVM-compatible chain
+
 **Status**: Production Ready
 
 > **[📖 See Full Deployment Details →](DEPLOYMENT_SUCCESS.md)**
@@ -279,12 +285,23 @@ evvm-optimized-fisher/
 ```bash
 # Set environment variables
 export EVVM_CORE_ADDRESS=0x...
+export PRIVATE_KEY=your_key
 
-# Deploy to testnet
+# Deploy to Supra (Williams Executor - 202x combined speed!)
+npx hardhat run scripts/deploy.ts --network supra
+
+# Or deploy to Supra testnet
+npx hardhat run scripts/deploy.ts --network supraTestnet
+
+# Deploy to other networks
 npx hardhat run scripts/deploy.ts --network sepolia
+npx hardhat run scripts/deploy.ts --network arbitrum
+npx hardhat run scripts/deploy.ts --network optimism
+npx hardhat run scripts/deploy.ts --network base
+npx hardhat run scripts/deploy.ts --network polygon
 
 # Verify contracts
-npx hardhat verify --network sepolia DEPLOYED_ADDRESS
+npx hardhat verify --network supra DEPLOYED_ADDRESS
 ```
 
 ---
@@ -334,7 +351,11 @@ For production deployments:
 
 ## License
 
-MIT
+**Business Source License** - Dual licensing model:
+- ✅ **Free for non-commercial use** (research, testing, testnets)
+- 💼 **Commercial license required** for mainnet/production
+
+See [LICENSE.md](LICENSE.md) for full terms.
 
 ---
 
