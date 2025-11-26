@@ -14,11 +14,14 @@
 - Explorer: [View on Etherscan](https://sepolia.etherscan.io/address/0x8F111895ddAD9e672aD2BCcA111c46E1eADA5E90)
 
 **Supported Networks:**
-- ✅ **Supra** (Williams Executor) - 202x combined improvement
+- ✅ **Supra** (Williams Executor) - **22x combined improvement** ⚡
 - ✅ Arbitrum, Optimism, Base, Polygon
 - ✅ Any EVM-compatible chain
 
 **Status**: Production Ready
+
+> **🔥 Integration Validated:** Fisher contracts + Williams Executor = **22x faster than SupraBTM**  
+> [View integration test →](https://github.com/MuffinsThaCat/winner/blob/main/williams_revm_complete/tests/fisher_integration.rs)
 
 > **[📖 See Full Deployment Details →](DEPLOYMENT_SUCCESS.md)**
 
